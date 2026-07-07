@@ -1,0 +1,40 @@
+
+:root {
+    --bg: #fdfbf7;
+    --text: #374151;
+    --primary: #d97706;
+    --accent: #556b2f;
+    --white: #ffffff;
+    --border: #e5e7eb;
+    --shadow: 0 4px 12px rgba(0,0,0,0.08);
+}
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: system-ui, -apple-system, 'Segoe UI', sans-serif; background: var(--bg); color: var(--text); line-height: 1.5; }
+.container { max-width: 900px; margin: 0 auto; padding: 20px; }
+h1 { color: var(--primary); text-align: center; margin: 24px 0; border-bottom: 3px solid var(--accent); padding-bottom: 12px; font-weight: 800; letter-spacing: 1px; }
+
+.section { background: var(--white); border-radius: 10px; padding: 18px; margin-bottom: 20px; border-left: 5px solid var(--primary); box-shadow: var(--shadow); }
+.section-title { font-size: 1.2rem; font-weight: 700; color: var(--accent); margin-bottom: 12px; display: flex; justify-content: space-between; align-items: center; }
+
+.item-row { display: grid; grid-template-columns: 2fr 1fr 40px; gap: 10px; margin-bottom: 10px; align-items: start; }
+.item-row textarea, .item-row input { width: 100%; padding: 10px; border: 2px solid var(--border); border-radius: 8px; font-size: 14px; font-family: inherit; transition: border-color 0.2s; }
+.item-row textarea:focus, .item-row input:focus { outline: none; border-color: var(--primary); }
+.item-row textarea { resize: vertical; min-height: 50px; }
+.btn-add { background: var(--accent); color: var(--white); border: none; padding: 8px 12px; border-radius: 8px; cursor: pointer; font-weight: 600; transition: transform 0.2s; }
+.btn-add:hover { transform: translateY(-2px); }
+.btn-del { background: #ef4444; color: var(--white); border: none; padding: 6px 8px; border-radius: 8px; cursor: pointer; }
+.btn-gen { width: 100%; padding: 16px; background: linear-gradient(135deg, #d97706 0%, #b45309 100%); color: var(--white); border: none; border-radius: 10px; font-size: 1.1rem; font-weight: 700; cursor: pointer; margin-top: 20px; box-shadow: 0 6px 16px rgba(217,119,6,0.3); transition: all 0.2s; }
+.btn-gen:hover { transform: translateY(-2px); box-shadow: 0 8px 24px rgba(217,119,6,0.4); }
+
+.modal { display: none; position: fixed; inset: 0; background: rgba(0,0,0,0.6); z-index: 1000; justify-content: center; align-items: center; backdrop-filter: blur(3px); }
+.modal.active { display: flex; }
+.modal-content { background: var(--white); padding: 24px; border-radius: 12px; max-width: 380px; width: 90%; text-align: center; border: 3px solid var(--primary); box-shadow: 0 10px 30px rgba(0,0,0,0.2); }
+.modal-content img { max-width: 100%; margin: 16px 0; background: var(--bg); padding: 8px; border-radius: 8px; }
+.modal-btn { padding: 10px 20px; background: var(--accent); color: var(--white); border: none; border-radius: 8px; cursor: pointer; margin: 6px; font-weight: 600; }
+.success-msg { background: #d1fae5; color: #065f46; padding: 12px; border-radius: 8px; margin-bottom: 16px; display: none; font-weight: 600; }
+.success-msg.show { display: block; }
+.error-msg { background: #fee2e2; color: #991b1b; padding: 12px; border-radius: 8px; margin-bottom: 16px; display: none; }
+.error-msg.show { display: block; }
+
+@media (max-width: 650px) { .item-row { grid-template-columns: 1fr; } }
+@media print { body * { visibility: hidden; } .modal, .modal * { visibility: visible; } .modal { position: absolute; left: 0; top: 0; width: 100%; background: white; padding: 20px; } .modal-btn { display: none; } }
