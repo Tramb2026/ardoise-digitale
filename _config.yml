@@ -1,0 +1,10 @@
+   exclude:
+     - "Mode_emploi_Installation_Utilisation_ArdoiseDigitale.md"
+     - "Pitch_Commercial_ArdoiseDigitale.md"
+     - "*.py"
+     - "*.txt"
+     - "data/"
+     - "core/"
+     - "templates/"
+     - "static/"
+     - "Output/"
