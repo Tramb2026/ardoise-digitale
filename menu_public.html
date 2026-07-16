@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menu du Restaurant</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 20px; background: #f9f9f9; }
+        .tab { overflow: hidden; border-bottom: 2px solid #333; margin-bottom: 20px; }
+        .tab button { background: #ddd; float: left; border: none; outline: none; cursor: pointer; padding: 14px 20px; transition: 0.3s; font-size: 16px; font-weight: bold; }
+        .tab button:hover { background: #ccc; }
+        .tab button.active { background: #333; color: white; }
+        .tabcontent { display: none; padding: 20px; background: white; border-radius: 8px; box-shadow: 0 2px 5px rgba(0,0,0,0.1); }
+        .tabcontent.active { display: block; }
+        p { line-height: 1.6; white-space: pre-wrap; }
+    </style>
+</head>
+<body>
+    <h2 style="text-align:center;">Notre Menu</h2>
+    <div class="tab"><button class="tablinks active" onclick="openTab(event, 'fr')">FR</button>
+<button class="tablinks " onclick="openTab(event, 'en')">EN</button>
+<button class="tablinks " onclick="openTab(event, 'es')">ES</button>
+<button class="tablinks " onclick="openTab(event, 'de')">DE</button>
+<button class="tablinks " onclick="openTab(event, 'it')">IT</button>
+<button class="tablinks " onclick="openTab(event, 'ru')">RU</button>
+</div>
+    <div id="fr" class="tabcontent active"><p>🥗 ENTRÉES<br>- Soupe à l'oignon ... 12<br><br>🍖 PLATS<br><br>🍰 DESSERTS<br><br></p></div>
+<div id="en" class="tabcontent "><p>🥗 ENTRIES<br>- Onion soup ... 12<br><br>🍖 DISHES<br><br>🍰DESSERTS</p></div>
+<div id="es" class="tabcontent "><p>🥗 ENTRADAS<br>- Sopa de cebolla... 12<br><br>🍖 PLATOS<br><br>🍰POSTRES</p></div>
+<div id="de" class="tabcontent "><p>🥗 EINTRÄGE<br>- Zwiebelsuppe ... 12<br><br>🍖 GERICHTE<br><br>🍰DESSERTS</p></div>
+<div id="it" class="tabcontent "><p>🥗 INGRESSI<br>- Zuppa di cipolle...12<br><br>🍖 PIATTI<br><br>🍰DESSERT</p></div>
+<div id="ru" class="tabcontent "><p>🥗 ЗАПИСИ<br>- Луковый суп... 12<br><br>🍖 БЛЮДА<br><br>🍰ДЕСЕРТЫ</p></div>
+
+    <script>
+        function openTab(evt, langName) {
+            var i, tabcontent, tablinks;
+            tabcontent = document.getElementsByClassName("tabcontent");
+            for (i = 0; i < tabcontent.length; i++) {
+                tabcontent[i].style.display = "none";
+                tabcontent[i].classList.remove("active");
+            }
+            tablinks = document.getElementsByClassName("tablinks");
+            for (i = 0; i < tablinks.length; i++) {
+                tablinks[i].className = tablinks[i].className.replace(" active", "");
+            }
+            document.getElementById(langName).style.display = "block";
+            document.getElementById(langName).classList.add("active");
+            evt.currentTarget.className += " active";
+        }
+        document.getElementsByClassName("tablinks")[0].click();
+    </script>
+</body>
+</html>
