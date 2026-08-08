@@ -3,34 +3,41 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Menu du Restaurant</title>
+    <title>Test</title>
+    <link rel="stylesheet" href="https://tramb2026.github.io/ardoise-digitale-themes/themes/neo_bistrot.css">
+
     <style>
-        body { font-family: Arial, sans-serif; margin: 20px; background: #f9f9f9; }
-        .tab { overflow: hidden; border-bottom: 2px solid #333; margin-bottom: 20px; }
-        .tab button { background: #ddd; float: left; border: none; outline: none; cursor: pointer; padding: 14px 20px; transition: 0.3s; font-size: 16px; font-weight: bold; }
-        .tab button:hover { background: #ccc; }
-        .tab button.active { background: #333; color: white; }
-        .tabcontent { display: none; padding: 20px; background: white; border-radius: 8px; box-shadow: 0 2px 5px rgba(0,0,0,0.1); }
-        .tabcontent.active { display: block; }
-        p { line-height: 1.6; white-space: pre-wrap; }
+        .tab { overflow: hidden; border-bottom: 2px solid var(--border, #ccc); margin-bottom: 20px; display: flex; justify-content: center; flex-wrap: wrap; gap: 5px; }
+        .tab button { background: transparent; border: 2px solid var(--border, #ccc); outline: none; cursor: pointer; padding: 10px 20px; transition: 0.3s; font-size: 14px; font-weight: bold; border-radius: var(--radius-sm, 8px); color: var(--text, #333); }
+        .tab button:hover { background: var(--primary-hover, #ddd); color: white; }
+        .tab button.active { background: var(--primary, #333); color: white; border-color: var(--primary, #333); }
+        .tabcontent { display: none; padding: 20px; background: var(--card-bg, white); border-radius: var(--radius, 8px); box-shadow: var(--shadow, 0 2px 5px rgba(0,0,0,0.1)); border: 1px solid var(--border, #eee); }
+        .tabcontent.active { display: block; animation: fadeIn 0.3s; }
+        @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+        p { line-height: 1.6; white-space: pre-wrap; color: var(--text, #333); }
     </style>
-</head>
+    </head>
 <body>
-    <h2 style="text-align:center;">Notre Menu</h2>
-    <div class="tab"><button class="tablinks active" onclick="openTab(event, 'fr')">FR</button>
+    <div class="container">
+        <header><h1>Test</h1></header>
+        <div class="tab"><button class="tablinks active" onclick="openTab(event, 'fr')">FR</button>
 <button class="tablinks " onclick="openTab(event, 'en')">EN</button>
 <button class="tablinks " onclick="openTab(event, 'es')">ES</button>
 <button class="tablinks " onclick="openTab(event, 'de')">DE</button>
 <button class="tablinks " onclick="openTab(event, 'it')">IT</button>
 <button class="tablinks " onclick="openTab(event, 'ru')">RU</button>
+<button class="tablinks " onclick="openTab(event, 'zh')">ZH</button>
+<button class="tablinks " onclick="openTab(event, 'nl')">NL</button>
 </div>
-    <div id="fr" class="tabcontent active"><p>test</p></div>
-<div id="en" class="tabcontent "><p>test</p></div>
-<div id="es" class="tabcontent "><p>prueba</p></div>
-<div id="de" class="tabcontent "><p>prüfen</p></div>
-<div id="it" class="tabcontent "><p>test</p></div>
-<div id="ru" class="tabcontent "><p>тест</p></div>
-
+<div id="fr" class="tabcontent active"><p>Entree: Salade 5eur</p></div>
+<div id="en" class="tabcontent "><p>Starter: Salad 5eur</p></div>
+<div id="es" class="tabcontent "><p>Entrante: Ensalada 5eur</p></div>
+<div id="de" class="tabcontent "><p>Vorspeise: Salat 5eur</p></div>
+<div id="it" class="tabcontent "><p>Antipasto: insalata 5 euro</p></div>
+<div id="ru" class="tabcontent "><p>Закуска: Салат 5 евро</p></div>
+<div id="zh" class="tabcontent "><p>前菜：沙拉 5 欧元</p></div>
+<div id="nl" class="tabcontent "><p>Voorgerecht: Salade 5eur</p></div>
+    </div>
     <script>
         function openTab(evt, langName) {
             var i, tabcontent, tablinks;
