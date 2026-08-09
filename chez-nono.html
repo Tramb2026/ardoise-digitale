@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chez NoNo</title>
+    <link rel="stylesheet" href="https://tramb2026.github.io/ardoise-digitale-themes/themes/neo_bistrot.css">
+
+    <style>
+        .tab { overflow: hidden; border-bottom: 2px solid var(--border, #ccc); margin-bottom: 20px; display: flex; justify-content: center; flex-wrap: wrap; gap: 5px; }
+        .tab button { background: transparent; border: 2px solid var(--border, #ccc); outline: none; cursor: pointer; padding: 10px 20px; transition: 0.3s; font-size: 14px; font-weight: bold; border-radius: var(--radius-sm, 8px); color: var(--text, #333); }
+        .tab button:hover { background: var(--primary-hover, #ddd); color: white; }
+        .tab button.active { background: var(--primary, #333); color: white; border-color: var(--primary, #333); }
+        .tabcontent { display: none; padding: 20px; background: var(--card-bg, white); border-radius: var(--radius, 8px); box-shadow: var(--shadow, 0 2px 5px rgba(0,0,0,0.1)); border: 1px solid var(--border, #eee); }
+        .tabcontent.active { display: block; animation: fadeIn 0.3s; }
+        @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+        p { line-height: 1.6; white-space: pre-wrap; color: var(--text, #333); }
+    </style>
+    </head>
+<body>
+    <div class="container">
+        <header><h1>Chez NoNo</h1></header>
+        <div class="tab"><button class="tablinks active" onclick="openTab(event, 'fr')">FR</button>
+<button class="tablinks " onclick="openTab(event, 'en')">EN</button>
+<button class="tablinks " onclick="openTab(event, 'es')">ES</button>
+<button class="tablinks " onclick="openTab(event, 'de')">DE</button>
+<button class="tablinks " onclick="openTab(event, 'it')">IT</button>
+<button class="tablinks " onclick="openTab(event, 'ru')">RU</button>
+<button class="tablinks " onclick="openTab(event, 'zh')">ZH</button>
+<button class="tablinks " onclick="openTab(event, 'nl')">NL</button>
+</div>
+<div id="fr" class="tabcontent active"><p>🥗 Entrées<br>Entrées<br><br>🍖 Plats<br>Entrées<br><br>🍰 Desserts<br><br>📋 Menus<br><br></p></div>
+<div id="en" class="tabcontent "><p>🥗 Entries<br>Starters<br><br>🍖 Dishes<br>Starters<br><br>🍰 Desserts<br><br>📋 Menus</p></div>
+<div id="es" class="tabcontent "><p>🥗 Entradas<br>Entrantes<br><br>🍖 Platos<br>Entrantes<br><br>🍰 Postres<br><br>📋 Menús</p></div>
+<div id="de" class="tabcontent "><p>🥗 Einträge<br>Vorspeisen<br><br>🍖 Gerichte<br>Vorspeisen<br><br>🍰 Desserts<br><br>📋 Menüs</p></div>
+<div id="it" class="tabcontent "><p>🥗 Inserzioni<br>Antipasti<br><br>🍖 Piatti<br>Antipasti<br><br>🍰 Dessert<br><br>📋 Menù</p></div>
+<div id="ru" class="tabcontent "><p>🥗 Записи<br>Закуски<br><br>🍖 Посуда<br>Закуски<br><br>🍰 Десерты<br><br>📋 Меню</p></div>
+<div id="zh" class="tabcontent "><p>🥗 参赛作品<br>初学者<br><br>🍖 菜肴<br>初学者<br><br>🍰 甜点<br><br>📋 菜单</p></div>
+<div id="nl" class="tabcontent "><p>🥗 Inzendingen<br>Voorgerechten<br><br>🍖 Gerechten<br>Voorgerechten<br><br>🍰 Desserts<br><br>📋 Menu's</p></div>
+    </div>
+    <script>
+        function openTab(evt, langName) {
+            var i, tabcontent, tablinks;
+            tabcontent = document.getElementsByClassName("tabcontent");
+            for (i = 0; i < tabcontent.length; i++) {
+                tabcontent[i].style.display = "none";
+                tabcontent[i].classList.remove("active");
+            }
+            tablinks = document.getElementsByClassName("tablinks");
+            for (i = 0; i < tablinks.length; i++) {
+                tablinks[i].className = tablinks[i].className.replace(" active", "");
+            }
+            document.getElementById(langName).style.display = "block";
+            document.getElementById(langName).classList.add("active");
+            evt.currentTarget.className += " active";
+        }
+        document.getElementsByClassName("tablinks")[0].click();
+    </script>
+</body>
+</html>
