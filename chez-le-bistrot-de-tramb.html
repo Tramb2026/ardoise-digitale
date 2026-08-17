@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chez le bistrot de Tramb</title>
+    <link rel="stylesheet" href="https://tramb2026.github.io/ardoise-digitale-themes/themes/neo_bistrot.css">
+
+    <style>
+        .tab { overflow: hidden; border-bottom: 2px solid var(--border, #ccc); margin-bottom: 20px; display: flex; justify-content: center; flex-wrap: wrap; gap: 5px; }
+        .tab button { background: transparent; border: 2px solid var(--border, #ccc); outline: none; cursor: pointer; padding: 10px 20px; transition: 0.3s; font-size: 14px; font-weight: bold; border-radius: var(--radius-sm, 8px); color: var(--text, #333); }
+        .tab button:hover { background: var(--primary-hover, #ddd); color: white; }
+        .tab button.active { background: var(--primary, #333); color: white; border-color: var(--primary, #333); }
+        .tabcontent { display: none; padding: 20px; background: var(--card-bg, white); border-radius: var(--radius, 8px); box-shadow: var(--shadow, 0 2px 5px rgba(0,0,0,0.1)); border: 1px solid var(--border, #eee); }
+        .tabcontent.active { display: block; animation: fadeIn 0.3s; }
+        @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+        p { line-height: 1.6; white-space: pre-wrap; color: var(--text, #333); }
+    </style>
+    </head>
+<body>
+    <div class="container">
+        <header><h1>Chez le bistrot de Tramb</h1></header>
+        <div class="tab"><button class="tablinks active" onclick="openTab(event, 'fr')">FR</button>
+<button class="tablinks " onclick="openTab(event, 'en')">EN</button>
+<button class="tablinks " onclick="openTab(event, 'es')">ES</button>
+<button class="tablinks " onclick="openTab(event, 'de')">DE</button>
+<button class="tablinks " onclick="openTab(event, 'it')">IT</button>
+<button class="tablinks " onclick="openTab(event, 'ru')">RU</button>
+<button class="tablinks " onclick="openTab(event, 'zh')">ZH</button>
+<button class="tablinks " onclick="openTab(event, 'nl')">NL</button>
+</div>
+<div id="fr" class="tabcontent active"><p>🍰 Desserts<br>Bonsoir.<br><br></p></div>
+<div id="en" class="tabcontent "><p>🍰 Desserts<br>Good evening.</p></div>
+<div id="es" class="tabcontent "><p>🍰 Postres<br>Buenas noches.</p></div>
+<div id="de" class="tabcontent "><p>🍰 Desserts<br>Guten Abend.</p></div>
+<div id="it" class="tabcontent "><p>🍰 Dessert<br>Buonasera.</p></div>
+<div id="ru" class="tabcontent "><p>🍰 Десерты<br>Добрый вечер.</p></div>
+<div id="zh" class="tabcontent "><p>🍰 甜点<br>晚上好。</p></div>
+<div id="nl" class="tabcontent "><p>🍰 Desserts<br>Goedenavond.</p></div>
+    </div>
+    <script>
+        function openTab(evt, langName) {
+            var i, tabcontent, tablinks;
+            tabcontent = document.getElementsByClassName("tabcontent");
+            for (i = 0; i < tabcontent.length; i++) {
+                tabcontent[i].style.display = "none";
+                tabcontent[i].classList.remove("active");
+            }
+            tablinks = document.getElementsByClassName("tablinks");
+            for (i = 0; i < tablinks.length; i++) {
+                tablinks[i].className = tablinks[i].className.replace(" active", "");
+            }
+            document.getElementById(langName).style.display = "block";
+            document.getElementById(langName).classList.add("active");
+            evt.currentTarget.className += " active";
+        }
+        document.getElementsByClassName("tablinks")[0].click();
+    </script>
+</body>
+</html>
