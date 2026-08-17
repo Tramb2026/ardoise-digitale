@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Le bistrot de Tramb</title>
+    <link rel="stylesheet" href="https://tramb2026.github.io/ardoise-digitale-themes/themes/neo_bistrot.css">
+
+    <style>
+        .tab { overflow: hidden; border-bottom: 2px solid var(--border, #ccc); margin-bottom: 20px; display: flex; justify-content: center; flex-wrap: wrap; gap: 5px; }
+        .tab button { background: transparent; border: 2px solid var(--border, #ccc); outline: none; cursor: pointer; padding: 10px 20px; transition: 0.3s; font-size: 14px; font-weight: bold; border-radius: var(--radius-sm, 8px); color: var(--text, #333); }
+        .tab button:hover { background: var(--primary-hover, #ddd); color: white; }
+        .tab button.active { background: var(--primary, #333); color: white; border-color: var(--primary, #333); }
+        .tabcontent { display: none; padding: 20px; background: var(--card-bg, white); border-radius: var(--radius, 8px); box-shadow: var(--shadow, 0 2px 5px rgba(0,0,0,0.1)); border: 1px solid var(--border, #eee); }
+        .tabcontent.active { display: block; animation: fadeIn 0.3s; }
+        @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+        p { line-height: 1.6; white-space: pre-wrap; color: var(--text, #333); }
+    </style>
+    </head>
+<body>
+    <div class="container">
+        <header><h1>Le bistrot de Tramb</h1></header>
+        <div class="tab"><button class="tablinks active" onclick="openTab(event, 'fr')">FR</button>
+<button class="tablinks " onclick="openTab(event, 'en')">EN</button>
+<button class="tablinks " onclick="openTab(event, 'es')">ES</button>
+<button class="tablinks " onclick="openTab(event, 'de')">DE</button>
+<button class="tablinks " onclick="openTab(event, 'it')">IT</button>
+<button class="tablinks " onclick="openTab(event, 'ru')">RU</button>
+<button class="tablinks " onclick="openTab(event, 'zh')">ZH</button>
+<button class="tablinks " onclick="openTab(event, 'nl')">NL</button>
+</div>
+<div id="fr" class="tabcontent active"><p>🥗 Entrées<br>Salade niçoise<br>- Tomate, Riz, Salade, Haricots verts, Thon, Anchois, Olives noires, Tomate, Riz, Salade, Haricots verts, Thon, Anchois, Olives noires - 8<br>Pâté de campagne<br>Du "Luberon" - 22<br><br>🍖 Plats<br>Steack<br>Frites salades - 22<br>"Pied Paquets"<br>Que Dieu nous tourne les grâces. - 65<br><br>🍰 Desserts<br>Dame Blanche - 112<br><br></p></div>
+<div id="en" class="tabcontent "><p>🥗 Entries<br>Nicoise salad<br>- Tomato, Rice, Salad, Green beans, Tuna, Anchovies, Black olives, Tomato, Rice, Salad, Green beans, Tuna, Anchovies, Black olives - 8<br>Country pâté<br>From"Luberon"- 22<br><br>🍖 Dishes<br>Steak<br>Salad fries - 22"Pied Paquets"May God bless us. - 65<br><br>🍰 Desserts<br>White Lady - 112</p></div>
+<div id="es" class="tabcontent "><p>🥗 Entradas<br>Ensalada Nicoise<br>- Tomate, Arroz, Ensalada, Judías verdes, Atún, Anchoas, Aceitunas negras, Tomate, Arroz, Ensalada, Judías verdes, Atún, Anchoas, Aceitunas negras - 8<br>paté campestre<br>De"Luberon"- 22<br><br>🍖 Platos<br>filete<br>Papas fritas para ensalada - 22"Pied Paquets"Que Dios nos bendiga. - 65<br><br>🍰 Postres<br>dama blanca - 112</p></div>
+<div id="de" class="tabcontent "><p>🥗 Einträge<br>Nicoise-Salat<br>- Tomate, Reis, Salat, grüne Bohnen, Thunfisch, Sardellen, schwarze Oliven, Tomate, Reis, Salat, grüne Bohnen, Thunfisch, Sardellen, schwarze Oliven - 8<br>Landpastete<br>Von"Luberon"- 22<br><br>🍖 Gerichte<br>Steak<br>Salatpommes - 22"Pied Paquets"Möge Gott uns segnen. - 65<br><br>🍰 Desserts<br>Weiße Dame - 112</p></div>
+<div id="it" class="tabcontent "><p>🥗 Inserzioni<br>Insalata nizzarda<br>- Pomodoro, Riso, Insalata, Fagiolini, Tonno, Acciughe, Olive nere, Pomodoro, Riso, Insalata, Fagiolini, Tonno, Acciughe, Olive nere - 8<br>Paté di campagna<br>Da"Luberon"- 22<br><br>🍖 Piatti<br>Bistecca<br>Patatine fritte - 22"Pied Paquets"Che Dio ci benedica. - 65<br><br>🍰 Dessert<br>Dama Bianca - 112</p></div>
+<div id="ru" class="tabcontent "><p>🥗 Записи<br>Салат Нисуаз<br>- Помидоры, Рис, Салат, Фасоль стручковая, Тунец, Анчоусы, Маслины черные, Помидоры, Рис, Салат, Фасоль зеленая, Тунец, Анчоусы, Оливки черные - 8<br>Деревенский паштет<br>От"Luberon"- 22<br><br>🍖 Посуда<br>Стейк<br>Салат фри - 22"Pied Paquets"Да благословит нас Бог. - 65<br><br>🍰 Десерты<br>Белая Леди - 112</p></div>
+<div id="zh" class="tabcontent "><p>🥗 参赛作品<br>尼斯沙拉<br>- 番茄、米饭、沙拉、青豆、金枪鱼、凤尾鱼、黑橄榄、番茄、米饭、沙拉、青豆、金枪鱼、凤尾鱼、黑橄榄 - 8<br>乡村酱<br>来自"Luberon"- 22<br><br>🍖 菜肴<br>牛排<br>沙拉薯条 - 22"Pied Paquets"愿上帝保佑我们。 - 65<br><br>🍰 甜点<br>白女士 - 112</p></div>
+<div id="nl" class="tabcontent "><p>🥗 Inzendingen<br>Nicoise-salade<br>- Tomaat, Rijst, Salade, Sperziebonen, Tonijn, Ansjovis, Zwarte olijven, Tomaat, Rijst, Salade, Sperziebonen, Tonijn, Ansjovis, Zwarte olijven - 8<br>Landelijke paté<br>Van"Luberon"- 22<br><br>🍖 Gerechten<br>Biefstuk<br>Salade frietjes - 22"Pied Paquets"Moge God ons zegenen. - 65<br><br>🍰 Desserts<br>Witte Dame - 112</p></div>
+    </div>
+    <script>
+        function openTab(evt, langName) {
+            var i, tabcontent, tablinks;
+            tabcontent = document.getElementsByClassName("tabcontent");
+            for (i = 0; i < tabcontent.length; i++) {
+                tabcontent[i].style.display = "none";
+                tabcontent[i].classList.remove("active");
+            }
+            tablinks = document.getElementsByClassName("tablinks");
+            for (i = 0; i < tablinks.length; i++) {
+                tablinks[i].className = tablinks[i].className.replace(" active", "");
+            }
+            document.getElementById(langName).style.display = "block";
+            document.getElementById(langName).classList.add("active");
+            evt.currentTarget.className += " active";
+        }
+        document.getElementsByClassName("tablinks")[0].click();
+    </script>
+</body>
+</html>
