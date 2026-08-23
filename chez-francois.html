@@ -5,56 +5,149 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Chez François</title>
     <link rel="stylesheet" href="https://tramb2026.github.io/ardoise-digitale-themes/themes/neo_bistrot.css">
-
+    
     <style>
-        .tab { overflow: hidden; border-bottom: 2px solid var(--border, #ccc); margin-bottom: 20px; display: flex; justify-content: center; flex-wrap: wrap; gap: 5px; }
-        .tab button { background: transparent; border: 2px solid var(--border, #ccc); outline: none; cursor: pointer; padding: 10px 20px; transition: 0.3s; font-size: 14px; font-weight: bold; border-radius: var(--radius-sm, 8px); color: var(--text, #333); }
-        .tab button:hover { background: var(--primary-hover, #ddd); color: white; }
-        .tab button.active { background: var(--primary, #333); color: white; border-color: var(--primary, #333); }
-        .tabcontent { display: none; padding: 20px; background: var(--card-bg, white); border-radius: var(--radius, 8px); box-shadow: var(--shadow, 0 2px 5px rgba(0,0,0,0.1)); border: 1px solid var(--border, #eee); }
-        .tabcontent.active { display: block; animation: fadeIn 0.3s; }
-        @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
-        p { line-height: 1.6; white-space: pre-wrap; color: var(--text, #333); }
+        .tab {
+            background: #f1f5f9;
+            border: 1px solid #e2e8f0;
+            padding: 0.5rem 1rem;
+            margin-right: 0.5rem;
+            cursor: pointer;
+            border-radius: 4px;
+            font-size: 0.9rem;
+        }
+        .tab.active {
+            background: var(--primary, #1e293b);
+            color: white;
+        }
+        .tab-content {
+            margin-top: 2rem;
+        }
+        .menu-section {
+            margin-bottom: 2rem;
+        }
+        .menu-section h2 {
+            color: var(--primary, #1e293b);
+            border-bottom: 2px solid var(--accent, #e11d48);
+            padding-bottom: 0.5rem;
+            margin-bottom: 1rem;
+        }
+        .menu-item {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 1rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 1px dotted #e2e8f0;
+        }
+        .item-name {
+            flex: 1;
+        }
+        .price {
+            font-weight: bold;
+            color: var(--accent, #e11d48);
+            margin-left: 1rem;
+        }
+        strong {
+            font-weight: 700;
+        }
+        em {
+            font-style: italic;
+            color: var(--text-muted, #64748b);
+            font-size: 0.9rem;
+        }
     </style>
-    </head>
+    
+</head>
 <body>
     <div class="container">
-        <header><h1>Chez François</h1></header>
-        <div class="tab"><button class="tablinks active" onclick="openTab(event, 'fr')">FR</button>
-<button class="tablinks " onclick="openTab(event, 'en')">EN</button>
-<button class="tablinks " onclick="openTab(event, 'es')">ES</button>
-<button class="tablinks " onclick="openTab(event, 'de')">DE</button>
-<button class="tablinks " onclick="openTab(event, 'it')">IT</button>
-<button class="tablinks " onclick="openTab(event, 'ru')">RU</button>
-<button class="tablinks " onclick="openTab(event, 'zh')">ZH</button>
-<button class="tablinks " onclick="openTab(event, 'nl')">NL</button>
+        <header>
+            <h1>Chez François</h1>
+            <div class="tabs">
+                <button class="tab active" onclick="openTab(event, 'fr')">FR</button>
+<button class="tab " onclick="openTab(event, 'en')">EN</button>
+<button class="tab " onclick="openTab(event, 'es')">ES</button>
+<button class="tab " onclick="openTab(event, 'de')">DE</button>
+<button class="tab " onclick="openTab(event, 'it')">IT</button>
+<button class="tab " onclick="openTab(event, 'ru')">RU</button>
+<button class="tab " onclick="openTab(event, 'zh')">ZH</button>
+<button class="tab " onclick="openTab(event, 'nl')">NL</button>
+
+            </div>
+        </header>
+        <div id="fr" class="tab-content" style="display:block"><div class="menu-section"><h2>Entrées</h2><div class="menu-item"><div class="item-name"><strong>Salade "du marché"</strong><br><em>Tomates, mozzarella, basilic frais</em></div><span class="price">12</span></div>
 </div>
-<div id="fr" class="tabcontent active"><p>=== PLATS ===<br><br>"Qui est pas qui ?"<br>Très, très bon.|65<br>C'est une surprise et il n'y a pas de prix.<br><br>=== DESSERTS ===<br><br>Nougat|5</p></div>
-<div id="en" class="tabcontent "><p>=== DISHES ==="Qui est pas qui ?"Very, very good.|65<br>It's a surprise and there's no price.<br><br>=== DESSERTS ===<br><br>Nougat|5</p></div>
-<div id="es" class="tabcontent "><p>=== PLATOS ==="Qui est pas qui ?"Muy, muy bien.|65<br>Es una sorpresa y no tiene precio.<br><br>=== POSTRES ===<br><br>Turrón|5</p></div>
-<div id="de" class="tabcontent "><p>=== GERICHTE ==="Qui est pas qui ?"Sehr, sehr gut.|65<br>Es ist eine Überraschung und es gibt keinen Preis.<br><br>=== DESSERTS ===<br><br>Nougat|5</p></div>
-<div id="it" class="tabcontent "><p>=== PIATTI ==="Qui est pas qui ?"Molto, molto bene.|65<br>È una sorpresa e non c'è prezzo.<br><br>=== DOLCI ===<br><br>Torrone|5</p></div>
-<div id="ru" class="tabcontent "><p>=== БЛЮДА ==="Qui est pas qui ?"Очень, очень хорошо.|65<br>Это сюрприз, и ему нет цены.<br><br>=== ДЕСЕРТЫ ===<br><br>Нуга|5</p></div>
-<div id="zh" class="tabcontent "><p>=== 菜肴 ==="Qui est pas qui ?"非常非常好。|65<br>这是一个惊喜，而且没有价格。<br><br>=== 甜点 ===<br><br>牛轧糖|5</p></div>
-<div id="nl" class="tabcontent "><p>=== GERECHTEN ==="Qui est pas qui ?"Heel, heel goed.|65<br>Het is een verrassing en er staat geen prijs op.<br><br>=== DESSERTS ===<br><br>Nougat|5</p></div>
+<div class="menu-section"><h2>Plats</h2><div class="menu-item"><div class="item-name"><strong>Bavette grillée</strong><br><em>Cuisson au feu de bois, échalotes confites</em></div><span class="price">25</span></div>
+</div>
+<div class="menu-section"><h2>Desserts</h2><div class="menu-item"><div class="item-name"><strong>Nougat</strong></div><span class="price">5</span></div>
+</div>
+</div>
+<div id="en" class="tab-content" style="display:none"><div class="menu-section"><h2>Starters</h2><div class="menu-item"><div class="item-name"><strong>Salad"du marché"</strong><br><em>Tomatoes, mozzarella, fresh basil</em></div><span class="price">12</span></div>
+</div>
+<div class="menu-section"><h2>Main Courses</h2><div class="menu-item"><div class="item-name"><strong>Grilled flank steak</strong><br><em>Cooking over a wood fire, candied shallots</em></div><span class="price">25</span></div>
+</div>
+<div class="menu-section"><h2>Desserts</h2><div class="menu-item"><div class="item-name"><strong>Nougat</strong></div><span class="price">5</span></div>
+</div>
+</div>
+<div id="es" class="tab-content" style="display:none"><div class="menu-section"><h2>Entrantes</h2><div class="menu-item"><div class="item-name"><strong>Ensalada"du marché"</strong><br><em>Tomates, mozzarella, albahaca fresca</em></div><span class="price">12</span></div>
+</div>
+<div class="menu-section"><h2>Platos Principales</h2><div class="menu-item"><div class="item-name"><strong>Filete de falda a la parrilla</strong><br><em>Cocinar al fuego de leña, chalotas confitadas</em></div><span class="price">25</span></div>
+</div>
+<div class="menu-section"><h2>Postres</h2><div class="menu-item"><div class="item-name"><strong>Turrón</strong></div><span class="price">5</span></div>
+</div>
+</div>
+<div id="de" class="tab-content" style="display:none"><div class="menu-section"><h2>Vorspeisen</h2><div class="menu-item"><div class="item-name"><strong>Salat"du marché"</strong><br><em>Tomaten, Mozzarella, frisches Basilikum</em></div><span class="price">12</span></div>
+</div>
+<div class="menu-section"><h2>Hauptgerichte</h2><div class="menu-item"><div class="item-name"><strong>Gegrilltes Flanksteak</strong><br><em>Kochen über einem Holzfeuer, kandierte Schalotten</em></div><span class="price">25</span></div>
+</div>
+<div class="menu-section"><h2>Nachspeisen</h2><div class="menu-item"><div class="item-name"><strong>Nougat</strong></div><span class="price">5</span></div>
+</div>
+</div>
+<div id="it" class="tab-content" style="display:none"><div class="menu-section"><h2>Antipasti</h2><div class="menu-item"><div class="item-name"><strong>Insalata"du marché"</strong><br><em>Pomodoro, mozzarella, basilico fresco</em></div><span class="price">12</span></div>
+</div>
+<div class="menu-section"><h2>Secondi Piatti</h2><div class="menu-item"><div class="item-name"><strong>Bistecca di fianco alla griglia</strong><br><em>Cottura su fuoco di legna, scalogno candito</em></div><span class="price">25</span></div>
+</div>
+<div class="menu-section"><h2>Dolci</h2><div class="menu-item"><div class="item-name"><strong>Torrone</strong></div><span class="price">5</span></div>
+</div>
+</div>
+<div id="ru" class="tab-content" style="display:none"><div class="menu-section"><h2>Закуски</h2><div class="menu-item"><div class="item-name"><strong>Салат"du marché"</strong><br><em>Помидоры, моцарелла, свежий базилик</em></div><span class="price">12</span></div>
+</div>
+<div class="menu-section"><h2>Основные блюда</h2><div class="menu-item"><div class="item-name"><strong>Фланк-стейк на гриле</strong><br><em>Готовим на дровах засахаренный лук-шалот.</em></div><span class="price">25</span></div>
+</div>
+<div class="menu-section"><h2>Десерты</h2><div class="menu-item"><div class="item-name"><strong>Нуга</strong></div><span class="price">5</span></div>
+</div>
+</div>
+<div id="zh" class="tab-content" style="display:none"><div class="menu-section"><h2>前菜</h2><div class="menu-item"><div class="item-name"><strong>Salade "du marché"</strong><br><em>Tomates, mozzarella, basilic frais</em></div><span class="price">12</span></div>
+</div>
+<div class="menu-section"><h2>主菜</h2><div class="menu-item"><div class="item-name"><strong>Bavette grillée</strong><br><em>Cuisson au feu de bois, échalotes confites</em></div><span class="price">25</span></div>
+</div>
+<div class="menu-section"><h2>甜点</h2><div class="menu-item"><div class="item-name"><strong>Nougat</strong></div><span class="price">5</span></div>
+</div>
+</div>
+<div id="nl" class="tab-content" style="display:none"><div class="menu-section"><h2>Voorgerechten</h2><div class="menu-item"><div class="item-name"><strong>Salade"du marché"</strong><br><em>Tomaten, mozzarella, verse basilicum</em></div><span class="price">12</span></div>
+</div>
+<div class="menu-section"><h2>Hoofdgerechten</h2><div class="menu-item"><div class="item-name"><strong>Gegrilde zijsteak</strong><br><em>Koken boven een houtvuur, gekonfijte sjalotjes</em></div><span class="price">25</span></div>
+</div>
+<div class="menu-section"><h2>Nagerechten</h2><div class="menu-item"><div class="item-name"><strong>Noga</strong></div><span class="price">5</span></div>
+</div>
+</div>
+
     </div>
+    
     <script>
-        function openTab(evt, langName) {
-            var i, tabcontent, tablinks;
-            tabcontent = document.getElementsByClassName("tabcontent");
-            for (i = 0; i < tabcontent.length; i++) {
-                tabcontent[i].style.display = "none";
-                tabcontent[i].classList.remove("active");
-            }
-            tablinks = document.getElementsByClassName("tablinks");
-            for (i = 0; i < tablinks.length; i++) {
-                tablinks[i].className = tablinks[i].className.replace(" active", "");
-            }
-            document.getElementById(langName).style.display = "block";
-            document.getElementById(langName).classList.add("active");
-            evt.currentTarget.className += " active";
+    function openTab(evt, lang) {
+        var i, tabcontent, tablinks;
+        tabcontent = document.getElementsByClassName("tab-content");
+        for (i = 0; i < tabcontent.length; i++) {
+            tabcontent[i].style.display = "none";
         }
-        document.getElementsByClassName("tablinks")[0].click();
+        tablinks = document.getElementsByClassName("tab");
+        for (i = 0; i < tablinks.length; i++) {
+            tablinks[i].classList.remove("active");
+        }
+        document.getElementById(lang).style.display = "block";
+        evt.currentTarget.classList.add("active");
+    }
     </script>
+    
 </body>
 </html>
