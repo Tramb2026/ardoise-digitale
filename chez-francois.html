@@ -55,6 +55,15 @@
             color: var(--text-muted, #64748b);
             font-size: 0.9rem;
         }
+        @media (max-width: 768px) {
+            body { padding: 1rem; font-size: 14px; }
+            h1 { font-size: 1.5rem; }
+            .menu-section h2 { font-size: 1.2rem; }
+            .menu-item { flex-direction: column; align-items: flex-start; }
+            .price { margin-left: 0; margin-top: 0.25rem; }
+            .tabs { display: flex; flex-wrap: wrap; gap: 0.5rem; }
+            .tab { margin-right: 0; padding: 0.4rem 0.8rem; font-size: 0.8rem; }
+        }
     </style>
     
 </head>
@@ -79,6 +88,7 @@
 <div class="menu-section"><h2>Plats</h2><div class="menu-item"><div class="item-name"><strong>Bavette grillée</strong><br><em>Cuisson au feu de bois, échalotes confites</em></div><span class="price">25</span></div>
 </div>
 <div class="menu-section"><h2>Desserts</h2><div class="menu-item"><div class="item-name"><strong>Nougat</strong></div><span class="price">5</span></div>
+<div class="menu-item"><div class="item-name"><strong>Fraise</strong></div><span class="price">15</span></div>
 </div>
 </div>
 <div id="en" class="tab-content" style="display:none"><div class="menu-section"><h2>Starters</h2><div class="menu-item"><div class="item-name"><strong>Salad"du marché"</strong><br><em>Tomatoes, mozzarella, fresh basil</em></div><span class="price">12</span></div>
@@ -86,6 +96,7 @@
 <div class="menu-section"><h2>Main Courses</h2><div class="menu-item"><div class="item-name"><strong>Grilled flank steak</strong><br><em>Cooking over a wood fire, candied shallots</em></div><span class="price">25</span></div>
 </div>
 <div class="menu-section"><h2>Desserts</h2><div class="menu-item"><div class="item-name"><strong>Nougat</strong></div><span class="price">5</span></div>
+<div class="menu-item"><div class="item-name"><strong>Strawberry</strong></div><span class="price">15</span></div>
 </div>
 </div>
 <div id="es" class="tab-content" style="display:none"><div class="menu-section"><h2>Entrantes</h2><div class="menu-item"><div class="item-name"><strong>Ensalada"du marché"</strong><br><em>Tomates, mozzarella, albahaca fresca</em></div><span class="price">12</span></div>
@@ -93,6 +104,7 @@
 <div class="menu-section"><h2>Platos Principales</h2><div class="menu-item"><div class="item-name"><strong>Filete de falda a la parrilla</strong><br><em>Cocinar al fuego de leña, chalotas confitadas</em></div><span class="price">25</span></div>
 </div>
 <div class="menu-section"><h2>Postres</h2><div class="menu-item"><div class="item-name"><strong>Turrón</strong></div><span class="price">5</span></div>
+<div class="menu-item"><div class="item-name"><strong>Fresa</strong></div><span class="price">15</span></div>
 </div>
 </div>
 <div id="de" class="tab-content" style="display:none"><div class="menu-section"><h2>Vorspeisen</h2><div class="menu-item"><div class="item-name"><strong>Salat"du marché"</strong><br><em>Tomaten, Mozzarella, frisches Basilikum</em></div><span class="price">12</span></div>
@@ -100,6 +112,7 @@
 <div class="menu-section"><h2>Hauptgerichte</h2><div class="menu-item"><div class="item-name"><strong>Gegrilltes Flanksteak</strong><br><em>Kochen über einem Holzfeuer, kandierte Schalotten</em></div><span class="price">25</span></div>
 </div>
 <div class="menu-section"><h2>Nachspeisen</h2><div class="menu-item"><div class="item-name"><strong>Nougat</strong></div><span class="price">5</span></div>
+<div class="menu-item"><div class="item-name"><strong>Erdbeere</strong></div><span class="price">15</span></div>
 </div>
 </div>
 <div id="it" class="tab-content" style="display:none"><div class="menu-section"><h2>Antipasti</h2><div class="menu-item"><div class="item-name"><strong>Insalata"du marché"</strong><br><em>Pomodoro, mozzarella, basilico fresco</em></div><span class="price">12</span></div>
@@ -107,6 +120,7 @@
 <div class="menu-section"><h2>Secondi Piatti</h2><div class="menu-item"><div class="item-name"><strong>Bistecca di fianco alla griglia</strong><br><em>Cottura su fuoco di legna, scalogno candito</em></div><span class="price">25</span></div>
 </div>
 <div class="menu-section"><h2>Dolci</h2><div class="menu-item"><div class="item-name"><strong>Torrone</strong></div><span class="price">5</span></div>
+<div class="menu-item"><div class="item-name"><strong>Fragola</strong></div><span class="price">15</span></div>
 </div>
 </div>
 <div id="ru" class="tab-content" style="display:none"><div class="menu-section"><h2>Закуски</h2><div class="menu-item"><div class="item-name"><strong>Салат"du marché"</strong><br><em>Помидоры, моцарелла, свежий базилик</em></div><span class="price">12</span></div>
@@ -114,13 +128,15 @@
 <div class="menu-section"><h2>Основные блюда</h2><div class="menu-item"><div class="item-name"><strong>Фланк-стейк на гриле</strong><br><em>Готовим на дровах засахаренный лук-шалот.</em></div><span class="price">25</span></div>
 </div>
 <div class="menu-section"><h2>Десерты</h2><div class="menu-item"><div class="item-name"><strong>Нуга</strong></div><span class="price">5</span></div>
+<div class="menu-item"><div class="item-name"><strong>Клубника</strong></div><span class="price">15</span></div>
 </div>
 </div>
-<div id="zh" class="tab-content" style="display:none"><div class="menu-section"><h2>前菜</h2><div class="menu-item"><div class="item-name"><strong>Salade "du marché"</strong><br><em>Tomates, mozzarella, basilic frais</em></div><span class="price">12</span></div>
+<div id="zh" class="tab-content" style="display:none"><div class="menu-section"><h2>前菜</h2><div class="menu-item"><div class="item-name"><strong>沙拉"du marché"</strong><br><em>西红柿、马苏里拉奶酪、新鲜罗勒</em></div><span class="price">12</span></div>
 </div>
-<div class="menu-section"><h2>主菜</h2><div class="menu-item"><div class="item-name"><strong>Bavette grillée</strong><br><em>Cuisson au feu de bois, échalotes confites</em></div><span class="price">25</span></div>
+<div class="menu-section"><h2>主菜</h2><div class="menu-item"><div class="item-name"><strong>烤侧腹牛排</strong><br><em>用柴火做饭，蜜饯青葱</em></div><span class="price">25</span></div>
 </div>
-<div class="menu-section"><h2>甜点</h2><div class="menu-item"><div class="item-name"><strong>Nougat</strong></div><span class="price">5</span></div>
+<div class="menu-section"><h2>甜点</h2><div class="menu-item"><div class="item-name"><strong>牛轧糖</strong></div><span class="price">5</span></div>
+<div class="menu-item"><div class="item-name"><strong>草莓</strong></div><span class="price">15</span></div>
 </div>
 </div>
 <div id="nl" class="tab-content" style="display:none"><div class="menu-section"><h2>Voorgerechten</h2><div class="menu-item"><div class="item-name"><strong>Salade"du marché"</strong><br><em>Tomaten, mozzarella, verse basilicum</em></div><span class="price">12</span></div>
@@ -128,6 +144,7 @@
 <div class="menu-section"><h2>Hoofdgerechten</h2><div class="menu-item"><div class="item-name"><strong>Gegrilde zijsteak</strong><br><em>Koken boven een houtvuur, gekonfijte sjalotjes</em></div><span class="price">25</span></div>
 </div>
 <div class="menu-section"><h2>Nagerechten</h2><div class="menu-item"><div class="item-name"><strong>Noga</strong></div><span class="price">5</span></div>
+<div class="menu-item"><div class="item-name"><strong>Aardbei</strong></div><span class="price">15</span></div>
 </div>
 </div>
 
