@@ -3,51 +3,134 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Menu du Restaurant</title>
+    <title>Notre Menu</title>
+    <link rel="stylesheet" href="https://tramb2026.github.io/ardoise-digitale-themes/themes/neo_bistrot.css">
+    
     <style>
-        body { font-family: Arial, sans-serif; margin: 20px; background: #f9f9f9; }
-        .tab { overflow: hidden; border-bottom: 2px solid #333; margin-bottom: 20px; }
-        .tab button { background: #ddd; float: left; border: none; outline: none; cursor: pointer; padding: 14px 20px; transition: 0.3s; font-size: 16px; font-weight: bold; }
-        .tab button:hover { background: #ccc; }
-        .tab button.active { background: #333; color: white; }
-        .tabcontent { display: none; padding: 20px; background: white; border-radius: 8px; box-shadow: 0 2px 5px rgba(0,0,0,0.1); }
-        .tabcontent.active { display: block; }
-        p { line-height: 1.6; white-space: pre-wrap; }
+        .tab {
+            background: #f1f5f9;
+            border: 1px solid #e2e8f0;
+            padding: 0.5rem 1rem;
+            margin-right: 0.5rem;
+            cursor: pointer;
+            border-radius: 4px;
+            font-size: 0.9rem;
+        }
+        .tab.active {
+            background: var(--primary, #1e293b);
+            color: white;
+        }
+        .tab-content {
+            margin-top: 2rem;
+        }
+        .menu-section {
+            margin-bottom: 2rem;
+        }
+        .menu-section h2 {
+            color: var(--primary, #1e293b);
+            border-bottom: 2px solid var(--accent, #e11d48);
+            padding-bottom: 0.5rem;
+            margin-bottom: 1rem;
+        }
+        .menu-item {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 1rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 1px dotted #e2e8f0;
+        }
+        .item-name {
+            flex: 1;
+        }
+        .price {
+            font-weight: bold;
+            color: var(--accent, #e11d48);
+            margin-left: 1rem;
+        }
+        strong {
+            font-weight: 700;
+        }
+        em {
+            font-style: italic;
+            color: var(--text-muted, #64748b);
+            font-size: 0.9rem;
+        }
+        @media (max-width: 768px) {
+            body { padding: 1rem; font-size: 14px; }
+            h1 { font-size: 1.5rem; margin-bottom: 1rem; }
+            .menu-section h2 { font-size: 1.1rem; }
+            .item-name strong { font-size: 1rem; }
+            .item-name em { font-size: 0.85rem; }
+            .price { font-size: 0.95rem; }
+            .tabs { display: flex; flex-wrap: wrap; gap: 0.4rem; }
+            .tab { margin-right: 0; padding: 0.4rem 0.8rem; font-size: 0.8rem; }
+        }
+        @media (max-width: 480px) {
+            body { padding: 0.5rem; font-size: 12px; line-height: 1.35; }
+            h1 { font-size: 1.1rem; letter-spacing: -0.02em; margin-bottom: 0.75rem; }
+            .menu-section h2 { font-size: 0.8rem; padding-bottom: 0.25rem; margin-bottom: 0.6rem; letter-spacing: 0.03em; }
+            .menu-item { margin-bottom: 0.6rem; padding-bottom: 0.4rem; }
+            .item-name strong { font-size: 0.7rem; line-height: 1.3; }
+            .item-name em { font-size: 0.7rem; line-height: 1.25; }
+            .price { font-size: 0.75rem; }
+            .tabs { display: grid; grid-template-columns: repeat(4, 1fr); gap: 0.3rem; }
+            .tab { margin-right: 0; padding: 0.3rem 0.5rem; font-size: 0.65rem; border-radius: 3px; text-align: center; }
+            .tab-content { margin-top: 1rem; }
+        }
+        @media (max-width: 360px) {
+            body { padding: 0.4rem; font-size: 11px; }
+            h1 { font-size: 1rem; }
+            .menu-section h2 { font-size: 0.75rem; }
+            .item-name strong { font-size: 0.65rem; }
+            .item-name em { font-size: 0.65rem; }
+            .price { font-size: 0.7rem; }
+            .tab { padding: 0.25rem 0.4rem; font-size: 0.6rem; }
+        }
     </style>
+    
 </head>
 <body>
-    <h2 style="text-align:center;">Notre Menu</h2>
-    <div class="tab"><button class="tablinks active" onclick="openTab(event, 'fr')">FR</button>
-<button class="tablinks " onclick="openTab(event, 'en')">EN</button>
-<button class="tablinks " onclick="openTab(event, 'es')">ES</button>
-<button class="tablinks " onclick="openTab(event, 'de')">DE</button>
-<button class="tablinks " onclick="openTab(event, 'it')">IT</button>
-<button class="tablinks " onclick="openTab(event, 'ru')">RU</button>
-</div>
-    <div id="fr" class="tabcontent active"><p>🥗 Entrées<br>rrrrrrrrrrr<br><br>🍖 Plats<br>qqqqqqqqqqqqqqqq<br><br>🍰 Desserts<br><br>📋 Formules<br><br></p></div>
-<div id="en" class="tabcontent "><p>🥗 Entries<br>rrrrrrrrrr<br><br>🍖 Dishes<br>qqqqqqqqqqqqqqq<br><br>🍰 Desserts<br><br>📋 Formulas</p></div>
-<div id="es" class="tabcontent "><p>🥗 Entradas<br>rrrrrrrrrrr<br><br>🍖 Platos<br>qqqqqqqqqqqqqqq<br><br>🍰 Postres<br><br>📋 Fórmulas</p></div>
-<div id="de" class="tabcontent "><p>🥗 Einträge<br>rrrrrrrrrr<br><br>🍖 Gerichte<br>qqqqqqqqqqqqqqq<br><br>🍰 Desserts<br><br>📋 Formeln</p></div>
-<div id="it" class="tabcontent "><p>🥗 Inserzioni<br>rrrrrrrrrr<br><br>🍖 Piatti<br>qqqqqqqqqqqqqqq<br><br>🍰 Dessert<br><br>📋 Formule</p></div>
-<div id="ru" class="tabcontent "><p>🥗 Записи<br>рррррррр<br><br>🍖 Посуда<br>qqqqqqqqqqqqqqqq<br><br>🍰 Десерты<br><br>📋 Формулы</p></div>
+    <div class="container">
+        <header>
+            <h1>Notre Menu</h1>
+            <div class="tabs">
+                <button class="tab active" onclick="openTab(event, 'fr')">FR</button>
+<button class="tab " onclick="openTab(event, 'en')">EN</button>
+<button class="tab " onclick="openTab(event, 'es')">ES</button>
+<button class="tab " onclick="openTab(event, 'de')">DE</button>
+<button class="tab " onclick="openTab(event, 'it')">IT</button>
+<button class="tab " onclick="openTab(event, 'ru')">RU</button>
+<button class="tab " onclick="openTab(event, 'zh')">ZH</button>
+<button class="tab " onclick="openTab(event, 'nl')">NL</button>
 
+            </div>
+        </header>
+        <div id="fr" class="tab-content" style="display:block"></div>
+<div id="en" class="tab-content" style="display:none"></div>
+<div id="es" class="tab-content" style="display:none"></div>
+<div id="de" class="tab-content" style="display:none"></div>
+<div id="it" class="tab-content" style="display:none"></div>
+<div id="ru" class="tab-content" style="display:none"></div>
+<div id="zh" class="tab-content" style="display:none"></div>
+<div id="nl" class="tab-content" style="display:none"></div>
+
+    </div>
+    
     <script>
-        function openTab(evt, langName) {
-            var i, tabcontent, tablinks;
-            tabcontent = document.getElementsByClassName("tabcontent");
-            for (i = 0; i < tabcontent.length; i++) {
-                tabcontent[i].style.display = "none";
-                tabcontent[i].classList.remove("active");
-            }
-            tablinks = document.getElementsByClassName("tablinks");
-            for (i = 0; i < tablinks.length; i++) {
-                tablinks[i].className = tablinks[i].className.replace(" active", "");
-            }
-            document.getElementById(langName).style.display = "block";
-            document.getElementById(langName).classList.add("active");
-            evt.currentTarget.className += " active";
+    function openTab(evt, lang) {
+        var i, tabcontent, tablinks;
+        tabcontent = document.getElementsByClassName("tab-content");
+        for (i = 0; i < tabcontent.length; i++) {
+            tabcontent[i].style.display = "none";
         }
-        document.getElementsByClassName("tablinks")[0].click();
+        tablinks = document.getElementsByClassName("tab");
+        for (i = 0; i < tablinks.length; i++) {
+            tablinks[i].classList.remove("active");
+        }
+        document.getElementById(lang).style.display = "block";
+        evt.currentTarget.classList.add("active");
+    }
     </script>
+    
 </body>
 </html>
